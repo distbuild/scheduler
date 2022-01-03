@@ -1,7 +1,7 @@
 # scheduler
 
 [![Build Status](https://github.com/distbuild/scheduler/workflows/CI/badge.svg?branch=main&event=push)](https://github.com/distbuild/scheduler/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/distbuild/scheduler/branch/main/graph/badge.svg?token=VVJ3VMPP9U)](https://codecov.io/gh/distbuild/scheduler)
+[![codecov](https://codecov.io/gh/distbuild/scheduler/branch/main/graph/badge.svg?token=S78151LC5J)](https://codecov.io/gh/distbuild/scheduler)
 [![Go Report Card](https://goreportcard.com/badge/github.com/distbuild/scheduler)](https://goreportcard.com/report/github.com/distbuild/scheduler)
 [![License](https://img.shields.io/github/license/distbuild/scheduler.svg)](https://github.com/distbuild/scheduler/blob/main/LICENSE)
 [![Release](https://img.shields.io/github/release/distbuild/scheduler.svg)](https://github.com/distbuild/scheduler/releases/latest)
