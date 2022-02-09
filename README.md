@@ -1,23 +1,22 @@
 # scheduler
 
 [![Build Status](https://github.com/distbuild/scheduler/workflows/CI/badge.svg?branch=main&event=push)](https://github.com/distbuild/scheduler/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/distbuild/scheduler/branch/main/graph/badge.svg?token=S78151LC5J)](https://codecov.io/gh/distbuild/scheduler)
-[![Go Report Card](https://goreportcard.com/badge/github.com/distbuild/scheduler)](https://goreportcard.com/report/github.com/distbuild/scheduler)
+[![codecov](https://codecov.io/gh/distbuild/scheduler/branch/main/graph/badge.svg?token=FM4NOMPT7Q)](https://codecov.io/gh/distbuild/scheduler)
 [![License](https://img.shields.io/github/license/distbuild/scheduler.svg)](https://github.com/distbuild/scheduler/blob/main/LICENSE)
-[![Release](https://img.shields.io/github/release/distbuild/scheduler.svg)](https://github.com/distbuild/scheduler/releases/latest)
+[![Tag](https://img.shields.io/github/tag/distbuild/scheduler.svg)](https://github.com/distbuild/scheduler/tags)
 [![Gitter chat](https://badges.gitter.im/craftslab/distbuild.png)](https://gitter.im/craftslab/distbuild)
 
 
 
 ## Introduction
 
-*scheduler* is the scheduler of [distbuild](https://github.com/distbuild) written in Go.
+*scheduler* is the build scheduler of [distbuild](https://github.com/distbuild) written in Rust.
 
 
 
 ## Prerequisites
 
-- Go >= 1.17.0
+- Rust >= 1.57.0
 
 
 
@@ -27,8 +26,8 @@
 git clone https://github.com/distbuild/scheduler.git
 
 cd scheduler
-version=latest make build
-./bin/scheduler --config-file="$PWD/config/config.yml"
+make build
+./target/release/scheduler --config-file="$PWD/src/config/config.yml"
 ```
 
 
@@ -39,8 +38,8 @@ version=latest make build
 git clone https://github.com/distbuild/scheduler.git
 
 cd scheduler
-version=latest make docker
-docker run -v "$PWD"/config:/tmp ghcr.io/distbuild/scheduler:latest --config-file="/tmp/config.yml"
+make docker
+docker run -v "$PWD"/src/config:/tmp ghcr.io/distbuild/scheduler:latest --config-file="/tmp/config.yml"
 ```
 
 
@@ -48,24 +47,22 @@ docker run -v "$PWD"/config:/tmp ghcr.io/distbuild/scheduler:latest --config-fil
 ## Usage
 
 ```
-usage: scheduler --config-file=CONFIG-FILE [<flags>]
+USAGE:
+    scheduler --config-file <NAME>
 
-distbuild scheduler
-
-Flags:
-  --help                     Show context-sensitive help (also try --help-long
-                             and --help-man).
-  --version                  Show application version.
-  --config-file=CONFIG-FILE  Config file (.yml)
+OPTIONS:
+    -c, --config-file <NAME>    Config file (.yml)
+    -h, --help                  Print help information
+    -V, --version               Print version information
 ```
 
 
 
 ## Settings
 
-*scheduler* parameters can be set in the directory [config](https://github.com/distbuild/scheduler/blob/main/config).
+*scheduler* parameters can be set in the directory [config](https://github.com/distbuild/scheduler/blob/main/src/config).
 
-An example of configuration in [config.yml](https://github.com/distbuild/scheduler/blob/main/config/config.yml):
+An example of configuration in [config.yml](https://github.com/distbuild/scheduler/blob/main/src/config/config.yml):
 
 ```yaml
 apiVersion: v1
@@ -73,6 +70,7 @@ kind: scheduler
 metadata:
   name: scheduler
 spec:
+  foo: foo
 ```
 
 

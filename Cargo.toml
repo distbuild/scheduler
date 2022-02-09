@@ -1,0 +1,31 @@
+[package]
+name = "scheduler"
+version = "0.0.1"
+edition = "2021"
+authors = ["Jia Jia <angersax@sina.com>"]
+include = [
+    "src/**/*",
+    "Cargo.toml",
+    "README.md"
+]
+description = "build scheduler"
+repository = "https://github.com/distbuild/scheduler"
+documentation = "https://github.com/distbuild/scheduler"
+homepage = "https://github.com/distbuild/scheduler"
+keywords = ["build", "scheduler"]
+categories = ["build"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[[bin]]
+name = "scheduler"
+path = "src/main.rs"
+
+[dependencies]
+clap = "3.0"
+serde = "1.0"
+serde_derive = "1.0"
+serde_yaml = "0.8"
+
+[badges]
+maintenance = { status = "actively-developed" }

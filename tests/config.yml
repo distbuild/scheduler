@@ -1,5 +1,0 @@
-apiVersion: v1
-kind: scheduler
-metadata:
-  name: scheduler
-spec:
