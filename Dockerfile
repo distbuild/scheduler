@@ -4,7 +4,6 @@ COPY . .
 RUN make install && \
     make build
 
-FROM gcr.io/distroless/base-debian11
+FROM scratch
 COPY --from=builder /usr/src/scheduler/target/release/scheduler /usr/local/bin/scheduler
-USER nonroot:nonroot
 ENTRYPOINT ["scheduler"]
